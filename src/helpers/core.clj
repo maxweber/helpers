@@ -9,4 +9,4 @@
    >(let [a \"hello\" b \"world\"] (symbol-map 'a 'b))
    {:a \"hello\", :b \"world\"}"
   [& symbols]
-  (into {} (map (fn [s] (let [sym s] `[(keyword ~sym) ~(second sym)])) (seq symbols))))
+  (into {} (map (fn [s] (let [sym s] `[(keyword ~sym) ~(second sym)])) symbols)))
