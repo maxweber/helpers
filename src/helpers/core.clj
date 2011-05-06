@@ -1,4 +1,4 @@
-(ns ^{:doc "Helper functions which are useful for almost every Clojure project."}
+(ns ^{:doc "Helper functions which are useful for clojure.core stuff."}
   helpers.core)
 
 (defmacro symbol-map
