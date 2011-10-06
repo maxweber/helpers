@@ -12,3 +12,12 @@
    {:a \"hello\", :b \"world\"}"
   [& symbols]
   (into {} (map (fn [s] `[(keyword (quote ~s)) ~s]) symbols)))
+
+(defn nested-access
+  "Abstracts the access path to a nested value in a map, so that the access
+   path doesn't not have to be repeated in the code."
+  [path]
+  (fn [map & [value]]
+    (if value
+      (assoc-in map path value)
+      (get-in map path))))
