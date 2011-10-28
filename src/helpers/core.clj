@@ -21,3 +21,11 @@
     (if value
       (assoc-in map path value)
       (get-in map path))))
+
+(defn get-arg
+  "Pops first argument from args if (pred arg) is true.
+  Returns a vector [this-arg remaining-args] or [nil args]."
+  [pred args]
+  (if (pred (first args))
+    [(first args) (next args)]
+    [nil args]))
