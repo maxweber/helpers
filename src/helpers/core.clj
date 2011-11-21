@@ -29,3 +29,10 @@
   (if (pred (first args))
     [(first args) (next args)]
     [nil args]))
+
+(defn into-seq
+  "Puts the result into a list, if it is not already a sequence."
+  [result]
+  (if (sequential? result)
+    result
+    (list result)))
